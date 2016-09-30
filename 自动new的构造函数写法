@@ -1,0 +1,32 @@
+var  AAA = function(selector) {
+
+	// 该内部函数片段要在最后执行，所以拥有构造函数所有prototype方法
+	// 存在的 this.init ，但是jquery会用构造函数调用
+	// 之前存在一个误区，在构造函数的return中，返回类型不同，可以改变函数类型,返回如果是简单类型如数字123，null,undefined等均无效
+	/*
+     * function aaa() {
+	 * return undefined;
+	 * }
+	 * console.log(new aaa()) => aaa{}
+	 */
+	// console.log(new AAA.fn.init(selector));
+
+	return new AAA.fn.init(selector);
+};
+
+AAA.fn = AAA.prototype;
+
+AAA.fn.init = function(selector) {
+
+	// 把selector传递给对象自己本身
+	this.selector = selector;
+	var arr = [this.selector];
+	arr.contents = this;
+	return arr;
+};
+
+AAA.fn.selectorName = function() {
+	return this.selector;
+};
+
+console.log(AAA("body"));
