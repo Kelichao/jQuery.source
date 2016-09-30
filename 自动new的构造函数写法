@@ -10,6 +10,20 @@ var  AAA = function(selector) {
 	 * console.log(new aaa()) => aaa{}
 	 */
 	// console.log(new AAA.fn.init(selector));
+	/*
+
+	// 安全构造函数法，jquery并没有这么用，所以用init拎出来单独调用
+	var $$ = ajQuery = function(selector) {
+    	if(!(this instanceof ajQuery)){
+        return new ajQuery(selector);
+    	}
+    	this.selector = selector;
+    	return this;
+	}
+	*
+	*
+	*
+	*/
 
 	return new AAA.fn.init(selector);
 };
