@@ -32,3 +32,63 @@
 - [3. 仿jQuery的mouseenter事件](https://github.com/Kelichao/jQuery-source1/issues/3)
 - [2. jQuery中的立即表达式](https://github.com/Kelichao/jQuery-source1/issues/2)
 
+-------------------------------------------------------------------------------------------------------------------
+
+# jQuery选择器核心
+- 1.层次选择器
+<table>
+<tr>
+<td>匹配单个紧邻在prev元素后面的next元素，效果等同于$("prev").next();</td>
+<td>$("prev + next");</td>
+</tr>
+
+<tr>
+<td>匹配所有prev元素后面的同辈siblings元素，
+<br>注意是之后的元素，且不包含该元素本身在内。
+效果等同于 $("prev").nextAll("siblings");</td>
+<td>$("prev ~ siblings");</td>
+</tr>
+</table>
+
+- 2.过滤选择器（伪类选择器）
+
+<table>
+
+ <tr><td>选中第一个元素 </td><td>$("select:first") $("select:eq(0)");</td></tr>
+ <tr><td>选中最后一个元素 </td><td>$("select:last");</td></tr>
+ <tr><td>选中偶数元素 </td><td>$("select:even");</td></tr>
+ <tr><td>选中奇数元素 </td><td>$("select:odd");</td></tr>
+ <tr><td>选中之后所有 </td><td>$("select:gt(3)");</td></tr>
+ <tr><td>选中之前所有 </td><td>$("select:lt(3)");</td></tr>
+ <tr><td>选中可见元素 </td><td>$("select:visible");</td></tr>
+ <tr><td>选中不可见元素 </td><td>$(select:hidden);</td></tr>
+ <tr><td>选中第一个子元素(中间需要有空格) </td><td>$("select :first-child");</td></tr>
+ <tr><td>选中最后一个子元素 </td><td>$("select :last-child");</td></tr>
+ <tr><td>选中第一个子元素(计数从1开始) </td><td>$("select :nth-child(2)");</td></tr>
+ <tr><td>选中不包含one类的元素 </td><td>$("select:not(.one)");</td></tr>
+ <tr><td>选中包含one类的元素 </td><td>$("select.one");</td></tr>
+ </table>
+
+- 3.内容选择器
+
+<table>
+<tr><td>选中文本内容为空的</td><td> $("select:empty");</td></tr>
+<tr><td>选中包含特定文本的</td><td> $("select:contains(klc)");</td></tr>
+<tr><td>选中不包含特定文本的</td><td> $("select:not(:contains(klc))");</td></tr>
+<tr><td>选中子代中含有某个类的节点</td><td> $("select:has(.class)");</td></tr>
+<tr><td>选中拥有子元素（包括文本,回车符）的元素</td><td> $("select:parent");</td></tr>
+ </table>
+
+
+- 4.属性选择器
+
+<table>
+<tr><td>选中含有title属性的</td><td> $("select[title]");</td></tr>
+<tr><td>选中title=text的元素(引号可省略)</td><td> $("select[title=text]");</td></tr>
+<tr><td>title值以klc开始</td><td> $("select[title^=klc]");</td></tr>
+<tr><td>title值以klc结束</td><td> $("select[title$=klc]");</td></tr>
+<tr><td>title值包含klc</td><td> $("select[title*=klc]");</td></tr>
+<tr><td>title值不包含klc</td><td> $("select[title!=klc]");</td></tr>
+<tr><td>组合属性写法</td><td> $("select[title][bob]");</td></tr>
+<tr><td>被选中的input</td><td> $("input:checked");</td></tr>
+ </table>
