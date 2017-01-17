@@ -1,7 +1,11 @@
 # jQuery源码解读笔记
 
+[jQuery在线文档](http://jquery.cuishifeng.cn/parent.html)
+
 [jQuery源码解读1（架构与依赖模块）issue列表](https://github.com/Kelichao/jQuery/issues)
 
+- [28. 【queue,dequeue】介绍](https://github.com/Kelichao/jQuery-source1/issues/28)
+- [27. 【$.deferred】用法详解](https://github.com/Kelichao/jQuery-source1/issues/27)
 - [26. 自己写的Deferred的连缀写法精简版](https://github.com/Kelichao/jQuery-source1/issues/26)
 - [25. 认识$.Deferred的接口](https://github.com/Kelichao/jQuery-source1/issues/25)
 - [24. 异步，以及线性回调 ,Deferred](https://github.com/Kelichao/jQuery-source1/issues/24)
